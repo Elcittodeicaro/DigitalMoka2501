@@ -58,15 +58,15 @@ export default function Home() {
       icon: Shield,
       title: 'Firewall',
       description:
-        'Filtriamo la complessità per te. Solo contenuti accessibili e comprensibili.',
+        'Filtriamo la complessita per te. Solo contenuti accessibili e comprensibili.',
     },
     {
       icon: Cpu,
       title: 'Algorithm',
       description:
-        'Il nostro metodo: semplificare senza banalizzare. Qualità premium brew.',
+        'Il nostro metodo: semplificare senza banalizzare. Qualita premium brew.',
     },
-  }
+  ]
 
   const latestEpisodes = [
     {

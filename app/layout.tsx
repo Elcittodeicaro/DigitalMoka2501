@@ -8,33 +8,56 @@ import { Toaster } from 'sonner'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Next.js 14 Vercel App',
+  title: 'Digital Moka - La tecnologia spiegata semplice, un sorso alla volta',
   description:
-    'Modern Next.js 14 application with TypeScript, Tailwind CSS, shadcn/ui, and Vercel deployment',
+    'Il podcast per i 40+ che vogliono capire l\'impatto della tecnologia sulla vita quotidiana. Episodi settimanali, semplici e pratici.',
   keywords: [
-    'Next.js',
-    'React',
-    'TypeScript',
-    'Tailwind CSS',
-    'shadcn/ui',
-    'Vercel',
+    'podcast',
+    'tecnologia',
+    'digital',
+    'over 40',
+    'intelligenza artificiale',
+    'smartphone',
+    'digitale',
+    'tech',
+    'italiano',
   ],
-  authors: [{ name: 'Your Name' }],
-  creator: 'Your Name',
+  authors: [{ name: 'Digital Moka Team' }],
+  creator: 'Digital Moka',
   openGraph: {
     type: 'website',
-    locale: 'en_US',
-    url: 'https://example.com',
-    siteName: 'Next.js 14 Vercel App',
-    title: 'Next.js 14 Vercel App',
+    locale: 'it_IT',
+    url: 'https://digitalmoka.com',
+    siteName: 'Digital Moka',
+    title: 'Digital Moka - La tecnologia spiegata semplice',
     description:
-      'Modern Next.js 14 application with TypeScript, Tailwind CSS, shadcn/ui, and Vercel deployment',
+      'Il podcast per i 40+ che vogliono capire l\'impatto della tecnologia sulla vita quotidiana.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Digital Moka Podcast',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Next.js 14 Vercel App',
+    title: 'Digital Moka - La tecnologia spiegata semplice',
     description:
-      'Modern Next.js 14 application with TypeScript, Tailwind CSS, shadcn/ui, and Vercel deployment',
+      'Il podcast per i 40+ che vogliono capire l\'impatto della tecnologia sulla vita quotidiana.',
+    images: ['/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 
@@ -44,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="it" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"

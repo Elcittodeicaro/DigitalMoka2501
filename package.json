@@ -1,7 +1,7 @@
 {
-  "name": "nextjs-vercel-app",
+  "name": "digital-moka-podcast",
   "version": "1.0.0",
-  "description": "Modern Next.js 14 application with TypeScript, Tailwind CSS, shadcn/ui, and Vercel deployment",
+  "description": "Sito web per il podcast Digital Moka - La tecnologia spiegata semplice, un sorso alla volta",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
+    "@supabase/supabase-js": "^2.39.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "lucide-react": "^0.376.0",

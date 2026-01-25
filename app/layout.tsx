@@ -8,9 +8,9 @@ import { Toaster } from 'sonner'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Digital Moka - La tecnologia spiegata semplice, un sorso alla volta',
+  title: 'Digital Moka - Il tuo caffè quotidiano con la tecnologia',
   description:
-    'Il podcast per i 40+ che vogliono capire l\'impatto della tecnologia sulla vita quotidiana. Episodi settimanali, semplici e pratici.',
+    'Il podcast per i 40+ che vogliono capire l\'impatto della tecnologia sulla vita quotidiana. Episodi settimanali, semplici e pratici. La tecnologia spiegata semplice, un sorso alla volta.',
   keywords: [
     'podcast',
     'tecnologia',
@@ -21,20 +21,21 @@ export const metadata: Metadata = {
     'digitale',
     'tech',
     'italiano',
+    'digital moka',
   ],
   authors: [{ name: 'Digital Moka Team' }],
-  creator: 'Digital Moka',
+  creator: 'Digital Moka Labs',
   openGraph: {
     type: 'website',
     locale: 'it_IT',
     url: 'https://digitalmoka.com',
     siteName: 'Digital Moka',
-    title: 'Digital Moka - La tecnologia spiegata semplice',
+    title: 'Digital Moka - Il tuo caffè quotidiano con la tecnologia',
     description:
       'Il podcast per i 40+ che vogliono capire l\'impatto della tecnologia sulla vita quotidiana.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/logo.png',
         width: 1200,
         height: 630,
         alt: 'Digital Moka Podcast',
@@ -43,10 +44,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Digital Moka - La tecnologia spiegata semplice',
+    title: 'Digital Moka - Il tuo caffè quotidiano con la tecnologia',
     description:
       'Il podcast per i 40+ che vogliono capire l\'impatto della tecnologia sulla vita quotidiana.',
-    images: ['/og-image.jpg'],
+    images: ['/logo.png'],
   },
   robots: {
     index: true,
@@ -58,6 +59,13 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/logo.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [{ url: '/logo.png', sizes: '180x180', type: 'image/png' }],
   },
 }
 

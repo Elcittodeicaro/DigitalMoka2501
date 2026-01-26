@@ -81,9 +81,9 @@ export default function Home() {
     },
     {
       id: 2,
-      title: 'Intelligenza Artificiale: Opportunità o Minaccia?',
+      title: 'Intelligenza Artificiale: Mito o Realta?',
       description:
-        "Esploriamo il mondo dell'AI e come sta cambiando il nostro modo di vivere e lavorare.",
+        "Scopriamo insieme cosa significa davvero AI e come sta cambiando la nostra vita quotidiana.",
       duration: '45 min',
       season: 1,
       episode: 2,
@@ -91,10 +91,10 @@ export default function Home() {
     },
     {
       id: 3,
-      title: 'Smartphone: Come Usarli in Modo Consapevole',
+      title: 'Smartphone: Amico o Nemico?',
       description:
-        'Consigli pratici per gestire il tempo sullo smartphone e migliorare il benessere digitale.',
-      duration: '35 min',
+        'Analizziamo il rapporto con i nostri dispositivi e come usarli in modo consapevole.',
+      duration: '40 min',
       season: 1,
       episode: 3,
       type: 'RAW DATA',
@@ -104,8 +104,6 @@ export default function Home() {
   const platforms = [
     { name: 'Spotify', url: '#' },
     { name: 'Apple Podcasts', url: '#' },
-    { name: 'YouTube', url: '#' },
-    { name: 'Google Podcasts', url: '#' },
   ]
 
   return (
@@ -149,7 +147,7 @@ export default function Home() {
               href="#newsletter"
               className="text-sm font-medium font-mono hover:text-blueprint-light transition-colors"
             >
-              API
+              NEWSLETTER
             </a>
             <ThemeToggle />
           </nav>
@@ -161,14 +159,15 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="container max-w-screen-2xl">
-        {/* Hero Section con Blueprint Background */}
-        <section className="relative py-20 md:py-32 overflow-hidden">
+        {/* Hero Section con Blueprint Image Full Width */}
+        <section className="relative py-12 md:py-20 overflow-hidden">
           <div className="blueprint-grid-large absolute inset-0 opacity-20" />
-          <div className="relative grid gap-12 md:grid-cols-2 items-center">
-            <div className="space-y-6">
+          <div className="relative space-y-12">
+            {/* Testo Hero */}
+            <div className="max-w-3xl mx-auto text-center space-y-6">
               <div className="inline-flex items-center gap-2 rounded border border-blueprint-medium/50 bg-blueprint-dark/10 px-4 py-1.5 text-sm font-mono">
                 <Mic className="h-4 w-4" />
-                <span>PODCAST | TARGET: 40+</span>
+                <span>PODCAST | TECNOLOGIA QUOTIDIANA</span>
               </div>
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl font-mono">
                 <span className="text-blueprint-dark dark:text-blueprint-light">
@@ -176,10 +175,10 @@ export default function Home() {
                 </span>
                 <br />
                 <span className="text-2xl md:text-3xl text-muted-foreground mt-2 block">
-                  Il tuo caffè quotidiano con la tecnologia
+                  Il tuo caffe quotidiano con la tecnologia
                 </span>
               </h1>
-              <div className="border-l-4 border-blueprint-medium pl-4">
+              <div className="border-l-4 border-blueprint-medium pl-4 max-w-2xl mx-auto text-left">
                 <p className="text-lg text-muted-foreground">
                   <span className="font-mono font-bold">OUTPUT:</span> Processed
                   & data as clear (135 ML)
@@ -188,7 +187,7 @@ export default function Home() {
                   brew
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
                   className="gap-2 font-mono bg-blueprint-dark hover:bg-blueprint-medium dark:bg-blueprint-light dark:hover:bg-blueprint-medium"
@@ -199,172 +198,178 @@ export default function Home() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="gap-2 font-mono border-blueprint-medium/50"
+                  className="gap-2 font-mono border-blueprint-medium/50 hover:bg-blueprint-dark/10"
                 >
                   READ SPECS
-                  <ChevronRight className="h-4 w-4" />
+                  <ChevronRight className="h-5 w-5" />
                 </Button>
               </div>
-              <div className="flex flex-wrap gap-4 pt-4">
-                {platforms.map((platform) => (
-                  <a
-                    key={platform.name}
-                    href={platform.url}
-                    className="text-xs font-mono text-muted-foreground hover:text-blueprint-light transition-colors flex items-center gap-1 border border-blueprint-medium/30 px-3 py-1 rounded"
-                  >
-                    {platform.name}
-                    <ExternalLink className="h-3 w-3" />
-                  </a>
-                ))}
-              </div>
             </div>
-            <div className="relative">
-              <div className="aspect-square rounded border-2 border-blueprint-medium/50 bg-blueprint-dark/5 dark:bg-blueprint-dark/20 p-8 blueprint-grid">
-                <Image
-                  src="/logo-blueprint.jpg"
-                  alt="Digital Moka Blueprint"
-                  width={600}
-                  height={600}
-                  className="w-full h-full object-contain rounded"
-                />
-              </div>
-              <div className="absolute -top-4 -right-4 bg-blueprint-dark dark:bg-blueprint-light text-white dark:text-blueprint-dark px-4 py-2 rounded font-mono text-xs font-bold">
-                REV 1.2
-              </div>
+
+            {/* Blueprint Image Full Width con effetto scroll */}
+            <div className="relative w-full h-[600px] md:h-[800px] -mx-4 md:mx-0">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background z-10" />
+              <Image
+                src="/logo-blueprint.jpg"
+                alt="Digital Moka Blueprint Technical Drawing"
+                fill
+                className="object-contain object-center"
+                priority
+              />
             </div>
           </div>
         </section>
 
-        {/* Features Section - Technical Style */}
+        {/* Features Section */}
         <section className="py-20 border-t border-blueprint-medium/30">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight font-mono">
-              SYSTEM ARCHITECTURE
+            <h2 className="text-3xl font-bold tracking-tight font-mono mb-4">
+              SYSTEM COMPONENTS
             </h2>
-            <p className="mt-2 text-muted-foreground font-mono text-sm">
-              ENGINEERED BY: DIGITAL MOKA LABS
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              I tre pilastri del nostro metodo per rendere la tecnologia
+              accessibile a tutti
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
-            {features.map((feature) => {
-              const Icon = feature.icon
-              return (
-                <Card
-                  key={feature.title}
-                  className="hover:shadow-lg transition-shadow border-blueprint-medium/30 bg-card/50 backdrop-blur"
-                >
-                  <CardHeader>
-                    <div className="mb-2 h-12 w-12 rounded border-2 border-blueprint-medium/50 bg-blueprint-dark/10 flex items-center justify-center">
-                      <Icon className="h-6 w-6 text-blueprint-dark dark:text-blueprint-light" />
-                    </div>
-                    <CardTitle className="font-mono">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-sm">
-                      {feature.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              )
-            })}
+            {features.map((feature, index) => (
+              <Card
+                key={index}
+                className="border-blueprint-medium/30 bg-card/50 backdrop-blur"
+              >
+                <CardHeader>
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded border-2 border-blueprint-medium/50 bg-blueprint-dark/10">
+                    <feature.icon className="h-6 w-6 text-blueprint-dark dark:text-blueprint-light" />
+                  </div>
+                  <CardTitle className="font-mono">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </section>
 
-        {/* Latest Episodes Section */}
-        <section id="episodi" className="py-20 border-t border-blueprint-medium/30">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight font-mono">
-              LATEST RELEASES
+        {/* Latest Episodes */}
+        <section
+          id="episodi"
+          className="py-20 border-t border-blueprint-medium/30"
+        >
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold tracking-tight font-mono mb-4">
+              LATEST EPISODES
             </h2>
-            <p className="mt-2 text-muted-foreground font-mono text-sm">
-              PROCESSED DATA | READY FOR CONSUMPTION
+            <p className="text-muted-foreground">
+              Gli ultimi episodi del podcast Digital Moka
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {latestEpisodes.map((episode) => (
               <Card
                 key={episode.id}
-                className="hover:shadow-lg transition-shadow border-blueprint-medium/30 bg-card/50 backdrop-blur"
+                className="border-blueprint-medium/30 bg-card/50 backdrop-blur hover:border-blueprint-medium/60 transition-colors"
               >
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-mono font-medium text-blueprint-dark dark:text-blueprint-light border border-blueprint-medium/50 px-2 py-1 rounded">
+                    <span className="inline-flex items-center rounded bg-blueprint-dark/20 px-2.5 py-0.5 text-xs font-mono font-semibold text-blueprint-dark dark:text-blueprint-light border border-blueprint-medium/30">
                       S{episode.season}E{episode.episode}
                     </span>
-                    <span className="text-xs font-mono font-medium text-muted-foreground">
-                      {episode.duration}
+                    <span className="text-xs font-mono text-muted-foreground">
+                      {episode.type}
                     </span>
                   </div>
-                  <div className="text-xs font-mono text-muted-foreground mb-2">
-                    TYPE: {episode.type}
-                  </div>
-                  <CardTitle className="text-xl">{episode.title}</CardTitle>
+                  <CardTitle className="font-mono text-lg">
+                    {episode.title}
+                  </CardTitle>
+                  <CardDescription>{episode.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="mb-4">
-                    {episode.description}
-                  </CardDescription>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="w-full gap-2 font-mono border-blueprint-medium/50"
-                  >
-                    <Play className="h-4 w-4" />
-                    PLAY
-                  </Button>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground font-mono">
+                      {episode.duration}
+                    </span>
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      className="gap-2 font-mono"
+                    >
+                      <Play className="h-4 w-4" />
+                      PLAY
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-          <div className="text-center mt-8">
-            <Button
-              variant="outline"
-              size="lg"
-              className="font-mono border-blueprint-medium/50"
-            >
-              VIEW ALL EPISODES
-              <ChevronRight className="h-4 w-4 ml-2" />
-            </Button>
+        </section>
+
+        {/* Platforms */}
+        <section className="py-20 border-t border-blueprint-medium/30">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight font-mono mb-4">
+              AVAILABLE ON
+            </h2>
+            <p className="text-muted-foreground">
+              Ascolta Digital Moka sulle tue piattaforme preferite
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4">
+            {platforms.map((platform) => (
+              <a
+                key={platform.name}
+                href={platform.url}
+                className="inline-flex items-center gap-2 rounded border border-blueprint-medium/50 bg-card px-6 py-3 font-mono text-sm font-medium hover:bg-blueprint-dark/10 transition-colors"
+              >
+                {platform.name}
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            ))}
           </div>
         </section>
 
-        {/* Newsletter Section - API Style */}
-        <section id="newsletter" className="py-20 border-t border-blueprint-medium/30">
+        {/* Newsletter Section - Semplificata */}
+        <section
+          id="newsletter"
+          className="py-20 border-t border-blueprint-medium/30"
+        >
           <Card className="max-w-2xl mx-auto border-blueprint-medium/30 bg-card/50 backdrop-blur">
             <CardHeader className="text-center">
-              <div className="mx-auto mb-4 h-12 w-12 rounded border-2 border-blueprint-medium/50 bg-blueprint-dark/10 flex items-center justify-center">
+              <div className="mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded border-2 border-blueprint-medium/50 bg-blueprint-dark/10">
                 <Mail className="h-6 w-6 text-blueprint-dark dark:text-blueprint-light" />
               </div>
               <CardTitle className="text-2xl font-mono">
-                API SUBSCRIPTION
+                NEWSLETTER
               </CardTitle>
-              <CardDescription className="font-mono text-sm">
-                ENDPOINT: /newsletter/subscribe
-                <br />
-                METHOD: POST | RESPONSE: 200 OK
+              <CardDescription>
+                Ricevi gli aggiornamenti su nuovi episodi, notizie tech e
+                contenuti esclusivi direttamente nella tua casella di posta
               </CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleNewsletterSubmit} className="space-y-4">
-                <div className="flex flex-col sm:flex-row gap-2">
+                <div className="flex flex-col sm:flex-row gap-3">
                   <input
                     type="email"
-                    placeholder="your.email@domain.com"
+                    placeholder="tua.email@esempio.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="flex-1 rounded border border-blueprint-medium/50 bg-background px-4 py-2 text-sm font-mono ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blueprint-medium focus-visible:ring-offset-2"
+                    className="flex-1 rounded border border-blueprint-medium/50 bg-background px-4 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blueprint-medium focus-visible:ring-offset-2"
                   />
                   <Button
                     type="submit"
                     disabled={isSubscribing}
-                    className="font-mono bg-blueprint-dark hover:bg-blueprint-medium dark:bg-blueprint-light dark:hover:bg-blueprint-medium"
+                    className="bg-blueprint-dark hover:bg-blueprint-medium dark:bg-blueprint-light dark:hover:bg-blueprint-medium"
                   >
-                    {isSubscribing ? 'SENDING...' : 'SUBSCRIBE'}
+                    {isSubscribing ? 'Invio...' : 'Iscriviti'}
                   </Button>
                 </div>
-                <p className="text-xs text-muted-foreground text-center font-mono">
-                  PRIVACY: COMPLIANT | SPAM: ZERO | QUALITY: PREMIUM
+                <p className="text-xs text-muted-foreground text-center">
+                  Niente spam, solo contenuti di qualita. Cancellazione in
+                  qualsiasi momento.
                 </p>
               </form>
             </CardContent>
@@ -401,7 +406,7 @@ export default function Home() {
                   <span className="font-mono font-bold text-foreground">
                     TARGET:
                   </span>{' '}
-                  Persone 40+ che vogliono capire l'impatto della tecnologia
+                  Per chi vuole capire la tecnologia in modo semplice e pratico
                 </p>
                 <p>
                   <span className="font-mono font-bold text-foreground">
@@ -437,15 +442,7 @@ export default function Home() {
                     href="#episodi"
                     className="hover:text-blueprint-light transition-colors"
                   >
-                    Episodes
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-blueprint-light transition-colors"
-                  >
-                    Blog
+                    Episodi
                   </a>
                 </li>
                 <li>
@@ -453,43 +450,9 @@ export default function Home() {
                     href="#about"
                     className="hover:text-blueprint-light transition-colors"
                   >
-                    Specs
+                    Chi Siamo
                   </a>
                 </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-3 font-mono">PLATFORMS</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground font-mono">
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-blueprint-light transition-colors"
-                  >
-                    Spotify
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-blueprint-light transition-colors"
-                  >
-                    Apple Podcasts
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-blueprint-light transition-colors"
-                  >
-                    YouTube
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-3 font-mono">CONTACT</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground font-mono">
                 <li>
                   <a
                     href="#newsletter"
@@ -498,27 +461,41 @@ export default function Home() {
                     Newsletter
                   </a>
                 </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-3 font-mono">PLATFORMS</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground font-mono">
+                {platforms.map((platform) => (
+                  <li key={platform.name}>
+                    <a
+                      href={platform.url}
+                      className="hover:text-blueprint-light transition-colors"
+                    >
+                      {platform.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-3 font-mono">CONTACT</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground font-mono">
                 <li>
                   <a
-                    href="#"
+                    href="mailto:info@digitalmoka.com"
                     className="hover:text-blueprint-light transition-colors"
                   >
-                    Privacy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-blueprint-light transition-colors"
-                  >
-                    Contact
+                    info@digitalmoka.com
                   </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-blueprint-medium/30 text-center text-sm text-muted-foreground font-mono">
-            <p>© 2024 DIGITAL MOKA | ALL RIGHTS RESERVED | PROJECT: DN-2024-001</p>
+          <div className="mt-12 pt-8 border-t border-blueprint-medium/30 text-center">
+            <p className="text-sm text-muted-foreground font-mono">
+              © 2024 Digital Moka Labs. All rights reserved. | Designed with ☕
+            </p>
           </div>
         </div>
       </footer>

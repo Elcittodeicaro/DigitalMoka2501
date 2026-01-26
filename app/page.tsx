@@ -104,14 +104,14 @@ export default function Home() {
   ]
 
   const platforms = [
-    { name: 'Spotify', url: '#' },
-    { name: 'Apple Podcasts', url: '#' },
+    { name: 'Spotify', url: 'https://open.spotify.com/show/0Yz5hnpYtlmHKQPwpgEqKh?si=5d6f6c0b4a5d4c0a' },
+    { name: 'Apple Podcasts', url: 'https://podcasts.apple.com/us/podcast/digital-moka/id1791140131' },
   ]
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, url: '#', color: '#1877F2' },
-    { name: 'X (Twitter)', icon: Twitter, url: '#', color: '#000000' },
-    { name: 'Instagram', icon: Instagram, url: '#', color: '#E4405F' },
+    { name: 'Facebook', icon: Facebook, url: 'https://www.facebook.com/profile.php?id=61571757382734', color: '#1877F2' },
+    { name: 'X (Twitter)', icon: Twitter, url: 'https://x.com/DigitalMoka', color: '#000000' },
+    { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/digital.moka/', color: '#E4405F' },
   ]
 
   return (
@@ -427,7 +427,7 @@ export default function Home() {
                       Host & Creator di Digital Moka
                     </p>
                     <a
-                      href="#"
+                      href="https://www.linkedin.com/in/simone-araceli-b3a03b3b/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm font-mono text-blueprint-dark dark:text-blueprint-light hover:underline"

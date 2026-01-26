@@ -6,8 +6,6 @@ import { toast } from 'sonner'
 import {
   Mic,
   Coffee,
-  Users,
-  Sparkles,
   Play,
   Mail,
   ExternalLink,
@@ -15,6 +13,10 @@ import {
   Database,
   Shield,
   Cpu,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
 } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
@@ -106,23 +108,30 @@ export default function Home() {
     { name: 'Apple Podcasts', url: '#' },
   ]
 
+  const socialLinks = [
+    { name: 'Facebook', icon: Facebook, url: '#', color: '#1877F2' },
+    { name: 'X (Twitter)', icon: Twitter, url: '#', color: '#000000' },
+    { name: 'Instagram', icon: Instagram, url: '#', color: '#E4405F' },
+  ]
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Header con Blueprint Grid */}
+      {/* Header con Logo Principale */}
       <header className="sticky top-0 z-50 border-b border-blueprint-medium/30 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
         <div className="blueprint-grid absolute inset-0 opacity-30" />
-        <div className="container relative flex h-16 max-w-screen-2xl items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="relative h-12 w-12 rounded border-2 border-blueprint-medium/50">
+        <div className="container relative flex h-20 max-w-screen-2xl items-center justify-between">
+          <div className="flex items-center gap-4">
+            <div className="relative h-16 w-16 rounded border-2 border-blueprint-medium/50 bg-background p-1">
               <Image
                 src="/logo.png"
                 alt="Digital Moka Logo"
                 fill
-                className="object-contain p-1"
+                className="object-contain"
+                priority
               />
             </div>
             <div>
-              <h1 className="font-bold text-lg font-mono tracking-wider">
+              <h1 className="font-bold text-xl font-mono tracking-wider">
                 DIGITAL MOKA
               </h1>
               <p className="text-xs text-muted-foreground font-mono">
@@ -136,12 +145,6 @@ export default function Home() {
               className="text-sm font-medium font-mono hover:text-blueprint-light transition-colors"
             >
               EPISODI
-            </a>
-            <a
-              href="#about"
-              className="text-sm font-medium font-mono hover:text-blueprint-light transition-colors"
-            >
-              SPECS
             </a>
             <a
               href="#newsletter"
@@ -159,7 +162,7 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="container max-w-screen-2xl">
-        {/* Hero Section con Blueprint Image Full Width */}
+        {/* Hero Section con Tagline */}
         <section className="relative py-12 md:py-20 overflow-hidden">
           <div className="blueprint-grid-large absolute inset-0 opacity-20" />
           <div className="relative space-y-12">
@@ -173,11 +176,11 @@ export default function Home() {
                 <span className="text-blueprint-dark dark:text-blueprint-light">
                   DIGITAL MOKA
                 </span>
-                <br />
-                <span className="text-2xl md:text-3xl text-muted-foreground mt-2 block">
-                  Il tuo caffe quotidiano con la tecnologia
-                </span>
               </h1>
+              {/* Tagline Principale */}
+              <p className="text-2xl md:text-3xl text-muted-foreground font-light italic">
+                La tecnologia spiegata semplice, un sorso alla volta
+              </p>
               <div className="border-l-4 border-blueprint-medium pl-4 max-w-2xl mx-auto text-left">
                 <p className="text-lg text-muted-foreground">
                   <span className="font-mono font-bold">OUTPUT:</span> Processed
@@ -199,14 +202,15 @@ export default function Home() {
                   size="lg"
                   variant="outline"
                   className="gap-2 font-mono border-blueprint-medium/50 hover:bg-blueprint-dark/10"
+                  onClick={() => document.getElementById('perche')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  READ SPECS
+                  SCOPRI DI PIU
                   <ChevronRight className="h-5 w-5" />
                 </Button>
               </div>
             </div>
 
-            {/* Blueprint Image Full Width con effetto scroll */}
+            {/* Blueprint Image Full Width */}
             <div className="relative w-full h-[600px] md:h-[800px] -mx-4 md:mx-0">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background z-10" />
               <Image
@@ -216,6 +220,36 @@ export default function Home() {
                 className="object-contain object-center"
                 priority
               />
+            </div>
+          </div>
+        </section>
+
+        {/* Sezione "Perche Digital Moka" */}
+        <section id="perche" className="py-20 border-t border-blueprint-medium/30">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold tracking-tight font-mono mb-4">
+                PERCHE DIGITAL MOKA
+              </h2>
+            </div>
+            <div className="space-y-6 text-lg text-muted-foreground">
+              <p>
+                Digital Moka nasce da una semplice osservazione: la tecnologia
+                sta cambiando rapidamente il nostro modo di vivere, lavorare e
+                comunicare, ma spesso viene raccontata in modo troppo tecnico o
+                superficiale.
+              </p>
+              <p>
+                Volevamo creare uno spazio dove chiunque, indipendentemente dal
+                proprio background tecnico, potesse capire davvero cosa sta
+                succedendo nel mondo digitale. Non servono lauree in
+                informatica: serve solo curiosita e voglia di capire.
+              </p>
+              <p className="border-l-4 border-blueprint-medium pl-4 italic">
+                Come una moka prepara il caffe con cura e metodo, noi
+                prepariamo contenuti verificati, accessibili e pratici. Un
+                sorso alla volta, per rendere la tecnologia piu vicina a tutti.
+              </p>
             </div>
           </div>
         </section>
@@ -306,31 +340,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Platforms */}
-        <section className="py-20 border-t border-blueprint-medium/30">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight font-mono mb-4">
-              AVAILABLE ON
-            </h2>
-            <p className="text-muted-foreground">
-              Ascolta Digital Moka sulle tue piattaforme preferite
-            </p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-4">
-            {platforms.map((platform) => (
-              <a
-                key={platform.name}
-                href={platform.url}
-                className="inline-flex items-center gap-2 rounded border border-blueprint-medium/50 bg-card px-6 py-3 font-mono text-sm font-medium hover:bg-blueprint-dark/10 transition-colors"
-              >
-                {platform.name}
-                <ExternalLink className="h-4 w-4" />
-              </a>
-            ))}
-          </div>
-        </section>
-
-        {/* Newsletter Section - Semplificata */}
+        {/* Newsletter Section */}
         <section
           id="newsletter"
           className="py-20 border-t border-blueprint-medium/30"
@@ -375,56 +385,64 @@ export default function Home() {
             </CardContent>
           </Card>
         </section>
-
-        {/* About Section */}
-        <section id="about" className="py-20 border-t border-blueprint-medium/30">
-          <div className="max-w-3xl mx-auto">
-            <div className="border-l-4 border-blueprint-medium pl-6 space-y-6">
-              <h2 className="text-3xl font-bold tracking-tight font-mono">
-                PROJECT SPECIFICATIONS
-              </h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  <span className="font-mono font-bold text-foreground">
-                    MATERIAL:
-                  </span>{' '}
-                  Contenuti verificati e fonti attendibili
-                </p>
-                <p>
-                  <span className="font-mono font-bold text-foreground">
-                    QUALITY:
-                  </span>{' '}
-                  Premium brew - La tecnologia spiegata senza tecnicismi
-                </p>
-                <p>
-                  <span className="font-mono font-bold text-foreground">
-                    CAPACITY:
-                  </span>{' '}
-                  6.5 FL OZ (193 ML) - Episodi da 30-45 minuti
-                </p>
-                <p>
-                  <span className="font-mono font-bold text-foreground">
-                    TARGET:
-                  </span>{' '}
-                  Per chi vuole capire la tecnologia in modo semplice e pratico
-                </p>
-                <p>
-                  <span className="font-mono font-bold text-foreground">
-                    ENGINEERED BY:
-                  </span>{' '}
-                  Digital Moka Labs
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
-      {/* Footer - Technical Style */}
+      {/* Footer con Social Links e LinkedIn */}
       <footer className="border-t border-blueprint-medium/30 bg-background/50 py-12 mt-20">
         <div className="blueprint-grid absolute inset-0 opacity-10" />
-        <div className="container max-w-screen-2xl relative">
-          <div className="grid gap-8 md:grid-cols-4">
+        <div className="container max-w-screen-2xl relative space-y-12">
+          {/* Social Links */}
+          <div className="text-center space-y-6">
+            <h3 className="font-semibold text-lg font-mono">SEGUICI</h3>
+            <div className="flex justify-center gap-6">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded border-2 border-blueprint-medium/50 bg-background hover:bg-blueprint-dark/10 transition-colors"
+                  aria-label={social.name}
+                >
+                  <social.icon className="h-5 w-5 text-blueprint-dark dark:text-blueprint-light" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* LinkedIn Personale */}
+          <div className="max-w-md mx-auto">
+            <Card className="border-blueprint-medium/30 bg-card/50 backdrop-blur">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-4">
+                  <div className="relative h-16 w-16 rounded-full border-2 border-blueprint-medium/50 overflow-hidden bg-blueprint-dark/10">
+                    {/* Placeholder per foto - sostituire con la tua foto */}
+                    <div className="flex items-center justify-center h-full w-full">
+                      <Linkedin className="h-8 w-8 text-blueprint-dark dark:text-blueprint-light" />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-mono font-semibold">Creato da Simone</p>
+                    <p className="text-sm text-muted-foreground mb-2">
+                      Host & Creator di Digital Moka
+                    </p>
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-mono text-blueprint-dark dark:text-blueprint-light hover:underline"
+                    >
+                      <Linkedin className="h-4 w-4" />
+                      Connettiti su LinkedIn
+                    </a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Footer Grid */}
+          <div className="grid gap-8 md:grid-cols-4 pt-8 border-t border-blueprint-medium/30">
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <Coffee className="h-5 w-5 text-blueprint-dark dark:text-blueprint-light" />
@@ -447,10 +465,10 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    href="#about"
+                    href="#perche"
                     className="hover:text-blueprint-light transition-colors"
                   >
-                    Chi Siamo
+                    Perche Digital Moka
                   </a>
                 </li>
                 <li>
@@ -479,20 +497,38 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-3 font-mono">CONTACT</h3>
+              <h3 className="font-semibold mb-3 font-mono">LEGAL</h3>
               <ul className="space-y-2 text-sm text-muted-foreground font-mono">
+                <li>
+                  <a
+                    href="#"
+                    className="hover:text-blueprint-light transition-colors"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="hover:text-blueprint-light transition-colors"
+                  >
+                    Cookie Policy
+                  </a>
+                </li>
                 <li>
                   <a
                     href="mailto:info@digitalmoka.com"
                     className="hover:text-blueprint-light transition-colors"
                   >
-                    info@digitalmoka.com
+                    Contatti
                   </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="mt-12 pt-8 border-t border-blueprint-medium/30 text-center">
+
+          {/* Copyright */}
+          <div className="pt-8 border-t border-blueprint-medium/30 text-center">
             <p className="text-sm text-muted-foreground font-mono">
               © 2024 Digital Moka Labs. All rights reserved. | Designed with ☕
             </p>

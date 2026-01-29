@@ -416,10 +416,13 @@ export default function Home() {
               <CardContent className="pt-6">
                 <div className="flex items-center gap-4">
                   <div className="relative h-16 w-16 rounded-full border-2 border-blueprint-medium/50 overflow-hidden bg-blueprint-dark/10">
-                    {/* Placeholder per foto - sostituire con la tua foto */}
-                    <div className="flex items-center justify-center h-full w-full">
-                      <Linkedin className="h-8 w-8 text-blueprint-dark dark:text-blueprint-light" />
-                    </div>
+                    <Image
+                      src="/simone-avatar.jpg"
+                      alt="Simone Araceli"
+                      width={64}
+                      height={64}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                   <div className="flex-1">
                     <p className="font-mono font-semibold">Creato da Simone</p>
